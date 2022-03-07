@@ -29,7 +29,7 @@ class CardDisplay extends React.Component {
                 <CardMedia
                   component="img"
                   height="140"
-                  image="./src/icons/cardTemp.svg"
+                  image="/icons/Card1.jpg"
                   alt="Card1"
                 />
                 <CardContent>
