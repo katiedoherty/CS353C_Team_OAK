@@ -1,26 +1,34 @@
 const express = require('express');
-const { default: mongoose } = require('mongoose');
-const MongoClient = require('mongodb').MongoClient
+const mongoose= require('mongoose');
+//const { default: mongoose } = require('mongoose');
+//const MongoClient = require('mongodb').MongoClient
 const morgan = require('morgan');
 const path = require('path');
+const cors = require('cors');
 
 const app = express();
-const PORT = process.env.PORT|| 8080;
+const dotenv = require('dotenv');
+//const PORT = process.env.PORT|| 8080;
 
 const routes = require('./routes/api');
+const routeULs=require('./routes/user');
+const authRoutes = require("./routes/auth");
 
-const MONGODB_URI = 'mongodb+srv://oakcard:oakcard123@oakcard.3hild.mongodb.net/FoodCards?retryWrites=true&w=majority'
+//const MONGODB_URI = 'mongodb+srv://oakcard:oakcard123@oakcard.3hild.mongodb.net/FoodCards?retryWrites=true&w=majority'mongoose.connect(MONGODB_URI ||'mongodb://localhost/my-app',{
+   // useNewUrlParser:true,
+   // useUnifiedTopology:true
+//}
 
-mongoose.connect(MONGODB_URI ||'mongodb://localhost/my-app',{
-    useNewUrlParser:true,
-    useUnifiedTopology:true
-}
+//);
+dotenv.config()
 
-);
 
-mongoose.connection.on('connected', ()=>{
+mongoose.connect(process.env.DATABASE_ACCESS, () => console.log("database connected"));
+
+
+/*mongoose.connection.on('connected', ()=>{
     console.log('Atlas is connected!');
-});
+});*/
 
 // //Schema
 // var foodcardsSchema = new mongoose.Schema({
@@ -39,11 +47,14 @@ mongoose.connection.on('connected', ()=>{
 // var foodcards = mongoose.model('foodcards',foodcardsSchema);
 //Data parsing
 app.use(express.json());
+app.use(cors())
 app.use(express.urlencoded({extended:false}));
 
 //HTTP request logger
 app.use(morgan('tiny'));
 app.use('/api',routes);
+app.use('/app', routeULs)
+app.use("/app", authRoutes);
 
 //Routes
 // app.get('/api',(req,res)=>{
@@ -74,4 +85,4 @@ app.use('/api',routes);
 //     res.json(data);
 // });
 
-app.listen(PORT,console.log(`Server is starting at ${PORT}`));
+app.listen(8080, () => console.log("server is up and running"));
