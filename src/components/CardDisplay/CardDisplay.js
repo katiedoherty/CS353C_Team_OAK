@@ -11,6 +11,11 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 
 import RandomCardGenerator from "../RandomCardGenerator/CardGenerator.js";
+import {
+  ProteinPacks,
+  CarbPacks,
+  VegPacks,
+} from "../RandomCardGenerator/CardGenerator.js";
 
 const CardDisplay = () => {
   const handleLogout = () => {
@@ -218,8 +223,23 @@ const CardDisplay = () => {
                 </Box>
               </Modal>
 
+              <CardMedia
+                component="img"
+                style={{ height: 275, width: 200, paddingTop: "0%" }}
+                image={require("./icons/Card4.jpg")}
+                alt="Card1"
+              />
+
+              <input
+                class="inputButton"
+                type="text"
+                id="randomProtein"
+                name="randomProtein"
+                readonly="readonly"
+              />
+
               <CardContent>
-                <div class="cardType">Seasoning</div>
+                <div class="cardType"></div>
               </CardContent>
             </Card>
           </div>
@@ -232,12 +252,45 @@ const CardDisplay = () => {
               }}
               onClick={handleOpen}
             >
+              <Modal open={open} onClose={handleClose}>
+                <Box sx={style}>
+                  <Typography
+                    id="modal-modal-title"
+                    variant="h6"
+                    component="h2"
+                  >
+                    Card Information:
+                  </Typography>
+                  <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+                    Power:
+                    <br />
+                    Duration:
+                  </Typography>
+                </Box>
+              </Modal>
+
+              <CardMedia
+                component="img"
+                style={{ height: 275, width: 200, paddingTop: "0%" }}
+                image={require("./icons/Card5.jpg")}
+                alt="Card1"
+              />
+
+              <input
+                class="inputButton"
+                type="text"
+                id="randomProtein"
+                name="randomProtein"
+                readonly="readonly"
+              />
+
               <CardContent>
-                <div class="cardType">Wildcard</div>
+                <div class="cardType"></div>
               </CardContent>
             </Card>
           </div>
         </Grid>
+        <br></br>
         <div class="submitButton">
           <Button
             variant="contained"
@@ -245,7 +298,23 @@ const CardDisplay = () => {
             size="large"
             color="success"
           >
-            Get Your Cards
+            Protein Packs: {ProteinPacks}
+          </Button>
+          <Button
+            variant="contained"
+            onClick={RandomCardGenerator}
+            size="large"
+            color="success"
+          >
+            Carb Packs : {CarbPacks}
+          </Button>
+          <Button
+            variant="contained"
+            onClick={RandomCardGenerator}
+            size="large"
+            color="success"
+          >
+            Veg Packs : {VegPacks}
           </Button>
         </div>
         <div class="logoutButton">
