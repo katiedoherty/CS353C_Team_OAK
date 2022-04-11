@@ -3,7 +3,6 @@ var CarbPacks = 5;
 var VegPacks = 5;
 
 function RandomCardGenerator() {
-
   var min = 0;
   var max = 20;
 
@@ -20,7 +19,7 @@ function RandomCardGenerator() {
       //Chicken
       console.log("Random Protein = Chicken");
       document.getElementById("randomProtein").value = "Chicken";
-      
+
       ProteinPacks--;
     } else if (randomProtein >= 10 && randomProtein <= 14) {
       //Salmon
