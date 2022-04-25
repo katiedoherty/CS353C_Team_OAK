@@ -1,6 +1,4 @@
-var ProteinPacks = 5;
-var CarbPacks = 5;
-var VegPacks = 5;
+import PlayingCard from "../CardDisplay/PlayingCard";
 
 function RandomCardGenerator() {
   var min = 0;
@@ -10,91 +8,101 @@ function RandomCardGenerator() {
   var randomCarb = Math.floor(Math.random() * (max - min + 1)) + min;
   var randomVeg = Math.floor(Math.random() * (max - min + 1)) + min;
 
-  console.log(randomProtein);
-  console.log(randomCarb);
-  console.log(randomVeg);
-
-  if (ProteinPacks <= 5 && ProteinPacks > 0) {
-    if (randomProtein <= 9) {
-      //Chicken
-      console.log("Random Protein = Chicken");
-      document.getElementById("randomProtein").value = "Chicken";
-
-      ProteinPacks--;
-    } else if (randomProtein >= 10 && randomProtein <= 14) {
-      //Salmon
-      console.log("Random Protein = Salmon");
-      document.getElementById("randomProtein").value = "Salmon";
-      ProteinPacks--;
-    } else if (randomProtein >= 15 && randomProtein <= 19) {
-      //Turkey
-      console.log("Random Protein = Turkey");
-      document.getElementById("randomProtein").value = "Turkey";
-      ProteinPacks--;
-    } else if (randomProtein >= 20) {
-      //Steak
-      console.log("Random Protein =  Steak");
-      document.getElementById("randomProtein").value = "Steak";
-      ProteinPacks--;
-    }
+  if (randomProtein <= 9) {
+    //Chicken
+    console.log("Random Protein = Chicken");
+    document.getElementById("randomCard").value = "Chicken";
+    document.getElementById(
+      "cardImage"
+    ).src = require("../Images/icons/Card5.jpg");
+  } else if (randomProtein >= 10 && randomProtein <= 14) {
+    //Salmon
+    console.log("Random Protein = Salmon");
+    document.getElementById("randomCard").value = "Salmon";
+    document.getElementById(
+      "cardImage"
+    ).src = require("../Images/icons/Card1.jpg");
+  } else if (randomProtein >= 15 && randomProtein <= 19) {
+    //Turkey
+    console.log("Random Protein = Turkey");
+    document.getElementById("randomCard").value = "Turkey";
+    document.getElementById(
+      "cardImage"
+    ).src = require("../Images/icons/Card1.jpg");
+  } else if (randomProtein >= 20) {
+    //Steak
+    console.log("Random Protein =  Steak");
+    document.getElementById("randomCard").value = "Steak";
+    document.getElementById(
+      "cardImage"
+    ).src = require("../Images/icons/Card1.jpg");
   } else {
-    document.getElementById("randomProtein").value = "No Protein Packs Left!";
+    document.getElementById("randomCard").value = "No Protein Packs Left!";
   }
 
-  // console.log("Random Veg = " + randomProtein)
-  if (CarbPacks <= 5 && CarbPacks > 0) {
-    if (randomCarb <= 9) {
-      // Potatoes
-      console.log("Random Carb = Potatoes");
-      document.getElementById("randomCarb").value = "Potatoes";
-      CarbPacks--;
-    } else if (randomCarb >= 10 && randomCarb <= 14) {
-      //Chips
-      console.log("Random Carb = Chips");
-      document.getElementById("randomCarb").value = "Chips";
-      CarbPacks--;
-    } else if (randomCarb >= 15 && randomCarb <= 19) {
-      //Pasta
-      console.log("Random Carb = Pasta");
-      document.getElementById("randomCarb").value = "Pasta";
-      CarbPacks--;
-    } else if (randomCarb >= 20) {
-      //Rice
-      console.log("Random Carb = Rice");
-      document.getElementById("randomCarb").value = "Rice";
-      CarbPacks--;
-    }
+  if (randomCarb <= 9) {
+    // Potatoes
+    console.log("Random Carb = Potatoes");
+    document.getElementById("randomCard").value = "Potatoes";
+    document.getElementById(
+      "cardImage"
+    ).src = require("../Images/icons/Card2.jpg");
+  } else if (randomCarb >= 10 && randomCarb <= 14) {
+    //Chips
+    console.log("Random Carb = Chips");
+    document.getElementById("randomCard").value = "Chips";
+    document.getElementById(
+      "cardImage"
+    ).src = require("../Images/icons/Card2.jpg");
+  } else if (randomCarb >= 15 && randomCarb <= 19) {
+    //Pasta
+    console.log("Random Carb = Pasta");
+    document.getElementById("randomCard").value = "Pasta";
+    document.getElementById(
+      "cardImage"
+    ).src = require("../Images/icons/Card2.jpg");
+  } else if (randomCarb >= 20) {
+    //Rice
+    console.log("Random Carb = Rice");
+    document.getElementById("randomCard").value = "Rice";
+    document.getElementById(
+      "cardImage"
+    ).src = require("../Images/icons/Card2.jpg");
   } else {
-    document.getElementById("randomCarb").value = "No Carb Packs Left!";
+    document.getElementById("randomCard").value = "No Carb Packs Left!";
   }
 
-  // console.log("Random Carb = " + randomVeg)
-  if (VegPacks <= 5 && VegPacks > 0) {
-    if (randomVeg <= 9) {
-      //Broccoli
-      console.log("Random Veg = Broccoli");
-      document.getElementById("randomVeg").value = "Broccoli";
-      VegPacks--;
-    } else if (randomVeg >= 10 && randomVeg <= 14) {
-      //Peas
-      console.log("Random Veg = Peas");
-      document.getElementById("randomVeg").value = "Peas";
-      VegPacks--;
-    } else if (randomVeg >= 15 && randomVeg <= 19) {
-      //Carrots
-      console.log("Random Veg = Carrots");
-      document.getElementById("randomVeg").value = "Carrots";
-      VegPacks--;
-    } else if (randomVeg >= 20) {
-      //Sprouts
-      console.log("Random Veg = Sprouts ");
-      document.getElementById("randomVeg").value = "Sprouts";
-      VegPacks--;
-    }
+  if (randomVeg <= 9) {
+    //Broccoli
+    console.log("Random Veg = Broccoli");
+    document.getElementById("randomCard").value = "Broccoli";
+    document.getElementById(
+      "cardImage"
+    ).src = require("../Images/icons/Card3.jpg");
+  } else if (randomVeg >= 10 && randomVeg <= 14) {
+    //Peas
+    console.log("Random Veg = Peas");
+    document.getElementById("randomCard").value = "Peas";
+    document.getElementById(
+      "cardImage"
+    ).src = require("../Images/icons/Card3.jpg");
+  } else if (randomVeg >= 15 && randomVeg <= 19) {
+    //Carrots
+    console.log("Random Veg = Carrots");
+    document.getElementById("randomCard").value = "Carrots";
+    document.getElementById(
+      "cardImage"
+    ).src = require("../Images/icons/Card3.jpg");
+  } else if (randomVeg >= 20) {
+    //Sprouts
+    console.log("Random Veg = Sprouts ");
+    document.getElementById("randomCard").value = "Sprouts";
+    document.getElementById(
+      "cardImage"
+    ).src = require("../Images/icons/Card3.jpg");
   } else {
-    document.getElementById("randomVeg").value = "No Veg Packs Left!";
+    document.getElementById("randomCard").value = "No Veg Packs Left!";
   }
 }
 
-export { ProteinPacks, CarbPacks, VegPacks };
 export default RandomCardGenerator;
