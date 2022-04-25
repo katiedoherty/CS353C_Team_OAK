@@ -1,3 +1,5 @@
+import { CoPresent } from '@mui/icons-material';
+
 const axios = require('axios').default;
 
 var ProteinPacks = 5;
@@ -27,69 +29,79 @@ async function RandomCardGenerator() {
     // console.log(randomMod);
     // console.log(randomWild);
 
-
+    //console.log(document.getElementById("randomCard").value);
 
     if (ProteinPacks <= 5 && ProteinPacks > 0) {
       if (randomProtein <= 9) {
         //Chicken
         console.log("Random Protein = Chicken");
-        var card_info = cards.data[0].Cardobject[0];
+        var card_info = cards.data[1].CardObject[0];
+        console.log(cards.data[1]);
+        console.log(card_info);
         var cardname = card_info.Card_Name;
-        document.getElementById("randomProtein").value = cardname;
+        
+        document.getElementById("randomCard").value = cardname;
       } else if (randomProtein >= 10 && randomProtein <= 14) {
         //Salmon
         console.log("Random Protein = Salmon");
-        var card_info = cards.data[0].Cardobject[1];
+        var card_info = cards.data[1].CardObject[1];
         var cardname = card_info.Card_Name;
-        document.getElementById("randomProtein").value = cardname;
+        document.getElementById("randomCard").value = cardname;
       } else if (randomProtein >= 15 && randomProtein <= 19) {
         //Turkey
         console.log("Random Protein = Turkey");
-        var card_info = cards.data[0].Cardobject[2]; 
+        var card_info = cards.data[1].CardObject[2]; 
         var cardname = card_info.Card_Name;
-        document.getElementById("randomProtein").value = cardname;
+        document.getElementById("randomCard").value = cardname;
       } else if (randomProtein >= 20) {
         //Steak
         console.log("Random Protein =  Steak");
-        var card_info = cards.data[0].Cardobject[3];
+        var card_info = cards.data[1].CardObject[3];
         var cardname = card_info.Card_Name;
-        document.getElementById("randomProtein").value = cardname;
+        document.getElementById("randomCard").value = cardname;
       }
+      var elem = document.getElementById("randomCard");
+      elem.id = "fixedCard";
+      return;
     } else {
       document.getElementById("randomProtein").value = "No Protein Packs Left!";
     }
+    
 
     // console.log("Random Carb = " + randomVeg)
     if (VegPacks <= 5 && VegPacks > 0) {
       if (randomVeg <= 9) {
         //Broccoli
         console.log("Random Veg = Sprouts");
-        var card_info = cards.data[1].Cardobject[0];
+        var card_info = cards.data[2].CardObject[0];
         var cardname = card_info.Card_Name;
-        document.getElementById("randomVeg").value = cardname;
+        document.getElementById("randomCard").value = cardname;
         VegPacks--;
       } else if (randomVeg >= 10 && randomVeg <= 14) {
         //Peas
         console.log("Random Veg = Peas");
-        var card_info = cards.data[1].Cardobject[1]; 
+        var card_info = cards.data[2].CardObject[1]; 
         var cardname = card_info.Card_Name;
-        document.getElementById("randomVeg").value = cardname;
+        document.getElementById("randomCard").value = cardname;
         VegPacks--;
       } else if (randomVeg >= 15 && randomVeg <= 19) {
         //Carrots
         console.log("Random Veg = Carrots");
-        var card_info = cards.data[1].Cardobject[2]; 
+        var card_info = cards.data[2].CardObject[2]; 
         var cardname = card_info.Card_Name;
-        document.getElementById("randomVeg").value = cardname;
+        document.getElementById("randomCard").value = cardname;
         VegPacks--;
       } else if (randomVeg >= 20) {
         //Sprouts
         console.log("Random Veg = Broccoli");
-        var card_info = cards.data[1].Cardobject[3]; 
+        var card_info = cards.data[2].CardObject[3]; 
         var cardname = card_info.Card_Name;
-        document.getElementById("randomVeg").value = cardname;
+        document.getElementById("randomCard").value = cardname;
         VegPacks--;
       }
+      var elem = document.getElementById("randomCard");
+      elem.id = "fixedCard";
+      return;
     } else {
       document.getElementById("randomVeg").value = "No Veg Packs Left!";
     }
@@ -99,66 +111,72 @@ async function RandomCardGenerator() {
       if (randomCarb <= 9) {
         // Potatoes
         console.log("Random Carb = Potatoes");
-        var card_info = cards.data[2].Cardobject[0];
+        var card_info = cards.data[3].CardObject[0];
         var cardname = card_info.Card_Name;
-        document.getElementById("randomCarb").value = cardname;
+        document.getElementById("randomCard").value = cardname;
         CarbPacks--;
       } else if (randomCarb >= 10 && randomCarb <= 14) {
         //Chips
         console.log("Random Carb = Chips");
-        var card_info = cards.data[2].Cardobject[1];
+        var card_info = cards.data[3].CardObject[1];
         var cardname = card_info.Card_Name;
-        document.getElementById("randomCarb").value = cardname;
+        document.getElementById("randomCard").value = cardname;
         CarbPacks--;
       } else if (randomCarb >= 15 && randomCarb <= 19) {
         //Pasta
         console.log("Random Carb = Pasta");
-        var card_info = cards.data[2].Cardobject[2];
+        var card_info = cards.data[3].CardObject[2];
         var cardname = card_info.Card_Name;
-        document.getElementById("randomCarb").value = cardname;
+        document.getElementById("randomCard").value = cardname;
         CarbPacks--;
       } else if (randomCarb >= 20) {
         //Rice
         console.log("Random Carb = Rice");
-        var card_info = cards.data[2].Cardobject[3];
+        var card_info = cards.data[3].CardObject[3];
         var cardname = card_info.Card_Name;
-        document.getElementById("randomCarb").value = cardname;
+        document.getElementById("randomCard").value = cardname;
         CarbPacks--;
       }
+      var elem = document.getElementById("randomCard");
+      elem.id = "fixedCard";
+      return;
     } else {
-      document.getElementById("randomCarb").value = "No Carb Packs Left!";
+      document.getElementById("randomCard").value = "No Carb Packs Left!";
     }
 
     if (ModPacks <= 5 && ModPacks > 0) {
       if (randomMod <= 9) {
         // Salt and Pepper
         console.log("Random Modifier = Salt and Pepper");
-        var card_info = cards.data[3].Cardobject[0];
+        var card_info = cards.data[4].CardObject[0];
         var cardname = card_info.Card_Name;
-        document.getElementById("randomMod").value = cardname;
+        document.getElementById("randomCard").value = cardname;
         ModPacks--;
       } else if (randomMod >= 10 && randomMod <= 14) {
         //Ketchup
         console.log("Random Modifier = Ketchup");
-        var card_info = cards.data[3].Cardobject[1];
+        var card_info = cards.data[4].CardObject[1];
         var cardname = card_info.Card_Name;
-        document.getElementById("randomMod").value = cardname;
+        document.getElementById("randomCard").value = cardname;
         ModPacks--;
       } else if (randomMod >= 15 && randomMod <= 19) {
         //Gravy
         console.log("Random Modifier = Gravy");
-        var card_info = cards.data[3].Cardobject[2];
+        var card_info = cards.data[4].CardObject[2];
         var cardname = card_info.Card_Name;
-        document.getElementById("randomMod").value = cardname;
+        document.getElementById("randomCard").value = cardname;
         ModPacks--;
       } else if (randomMod >= 20) {
         //Saffron
         console.log("Random Modifier = Saffron");
-        var card_info = cards.data[3].Cardobject[3];
+        var card_info = cards.data[4].CardObject[3];
         var cardname = card_info.Card_Name;
-        document.getElementById("randomMod").value = cardname;
+        document.getElementById("randomCard").value = cardname;
         ModPacks--;
       }
+      var elem = document.getElementById("randomCard");
+      elem.id = "fixedCard";
+      return;
     } else {
       document.getElementById("randomMod").value = "No Modifier Packs Left!";
     }
@@ -167,32 +185,35 @@ async function RandomCardGenerator() {
       if (randomWild <= 9) {
         //Trip the Chef
         console.log("Random Wildcard = Trip the Chef");
-        var card_info = cards.data[4].CardObject[0];
+        var card_info = cards.data[0].CardObject[0];
         var cardname = card_info.Card_Name;
-        document.getElementById("randomWild").value = cardname;
+        document.getElementById("randomCard").value = cardname;
         WildPacks--;
       } else if (randomWild >= 10 && randomWild <= 14) {
         //Push Your Opponent
         console.log("Random WildCard = Push Your Opponents Food Off The Table");
-        var card_info = cards.data[4].CardObject[1];
+        var card_info = cards.data[0].CardObject[1];
         var cardname = card_info.Card_Name;
-        document.getElementById("randomWild").value = cardname;
+        document.getElementById("randomCard").value = cardname;
         WildPacks--;
       } else if (randomWild >= 15 && randomWild <= 19) {
         //Ramsay Complements
         console.log("Random Wildcard = Ramsay Complements");
-        var card_info = cards.data[4].CardObject[2];
+        var card_info = cards.data[0].CardObject[2];
         var cardname = card_info.Card_Name;
-        document.getElementById("randomWild").value = cardname;
+        document.getElementById("randomCard").value = cardname;
         WildPacks--;
       } else if (randomWild >= 20) {
         //Cooked to Perfection
         console.log("Random Wildcard = Cooked to Perfection");
-        var card_info = cards.data[4].CardObject[3];
+        var card_info = cards.data[0].CardObject[3];
         var cardname = card_info.Card_Name;
-        document.getElementById("randomMod").value = cardname;
+        document.getElementById("randomCard").value = cardname;
         WildPacks--;
       }
+      var elem = document.getElementById("randomCard");
+      elem.id = "fixedCard";
+      return;
     } else {
       document.getElementById("randomMod").value = "No Modifier Packs Left!";
     }

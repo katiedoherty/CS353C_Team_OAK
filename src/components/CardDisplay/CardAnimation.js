@@ -29,6 +29,8 @@ const CardAnimation = () => {
     },
   ]);
 
+  const newCard = RandomCardGenerator();
+
   const addItem = () => {
     const timestamp = Date.now();
     setItems([
