@@ -6,7 +6,7 @@ import LogOutButton from "./Buttons/LogOutButton";
 import IngredientsButton from "./Buttons/IngredientsButton";
 import "./CardAnimation.css";
 
-import RandomCardGenerator from "../RandomCardGenerator/CardGenerator.js";
+import RandomCardGenerator from "../RandomCardGenerator/newCardGenerator";
 
 const Container = styled.div`
   display: grid;
@@ -19,6 +19,8 @@ const Container = styled.div`
   }
 `;
 
+//const newCard = RandomCardGenerator();
+
 const CardAnimation = () => {
   const [items, setItems] = useState([
     {
@@ -28,8 +30,6 @@ const CardAnimation = () => {
       power: "0",
     },
   ]);
-
-  const newCard = RandomCardGenerator();
 
   const addItem = () => {
     const timestamp = Date.now();
@@ -43,7 +43,8 @@ const CardAnimation = () => {
       },
     ]);
     const getCard = RandomCardGenerator();
-    console.log(getCard);
+    console.log("Generating new card");
+    //console.log(getCard);
   };
 
   const removeItem = (id) => {
