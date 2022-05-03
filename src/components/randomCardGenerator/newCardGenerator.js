@@ -35,6 +35,9 @@ async function RandomCardGenerator() {
                 console.log(card_info);
                 var cardname = card_info.Card_Name;                
                 document.getElementById("randomCard").value = cardname;
+                // var elem = document.getElementById("cardImage");
+                // elem.src = "../Images/icons/Card5.jpg";
+                //code for changing image based on type, images aren't load correctly
             } 
             else if (randomIndex >= 10 && randomIndex <= 14) {
                 //Push your opponents food
