@@ -35,9 +35,6 @@ async function RandomCardGenerator() {
                 console.log(card_info);
                 var cardname = card_info.Card_Name;                
                 document.getElementById("randomCard").value = cardname;
-                // var elem = document.getElementById("cardImage");
-                // elem.src = "../Images/icons/Card5.jpg";
-                //code for changing image based on type, images aren't load correctly
             } 
             else if (randomIndex >= 10 && randomIndex <= 14) {
                 //Push your opponents food
@@ -63,6 +60,9 @@ async function RandomCardGenerator() {
             //console.log("Setting randomCard id to fixedCard");
             var elem = document.getElementById("randomCard");
             elem.id = "fixedCard";
+            var cardImage = document.getElementById("cardImage");
+            cardImage.src = require("../Images/icons/Card5.jpg");
+            cardImage.id = "fixedImage";
             return;
         }
         case 1: {
@@ -95,6 +95,9 @@ async function RandomCardGenerator() {
               //console.log("Setting randomCard id to fixedCard");
               var elem = document.getElementById("randomCard");
               elem.id = "fixedCard";
+              var cardImage = document.getElementById("cardImage");
+              cardImage.src = require("../Images/icons/Card1.jpg");
+              cardImage.id = "fixedImage";
               return;
         }
         case 2: {
@@ -127,6 +130,9 @@ async function RandomCardGenerator() {
               //console.log("Setting randomCard id to fixedCard");
               var elem = document.getElementById("randomCard");
               elem.id = "fixedCard";
+              var cardImage = document.getElementById("cardImage");
+              cardImage.src = require("../Images/icons/Card3.jpg");
+              cardImage.id = "fixedImage";
               return;
         }
         case 3: {
@@ -159,6 +165,9 @@ async function RandomCardGenerator() {
               //console.log("Setting randomCard id to fixedCard");
               var elem = document.getElementById("randomCard");
               elem.id = "fixedCard";
+              var cardImage = document.getElementById("cardImage");
+              cardImage.src = require("../Images/icons/Card2.jpg");
+              cardImage.id = "fixedImage";
               return;
         }
         case 4: {
@@ -191,6 +200,9 @@ async function RandomCardGenerator() {
               //console.log("Setting randomCard id to fixedCard");
               var elem = document.getElementById("randomCard");
               elem.id = "fixedCard";
+              var cardImage = document.getElementById("cardImage");
+              cardImage.src = require("../Images/icons/Card4.jpg");
+              cardImage.id = "fixedImage";
               return;
         }
     }
