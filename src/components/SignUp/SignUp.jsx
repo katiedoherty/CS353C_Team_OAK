@@ -1,117 +1,87 @@
-import React, {Component} from 'react';
+import { useState } from "react";
 //import "bootstrap/dist/css/bootstrap.min.css"
 import axios from 'axios';
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
+import "./signup.css";
 
 
+const Signup = () => {
+    const [data, setData] = useState({
+		fullName: "",
+		username: "",
+		email: "",
+		password: "",
+	});
+	const [error, setError] = useState("");
+    const navigate = useNavigate();
 
-class App extends Component{
-    constructor(){
-        super()
-        this.state = {
-            fullName:'',
-            username:'',
-            email:'',
-            password:''
-        }
-
-        this.changeEmail=this.changeEmail.bind(this);
-        this.changeFullName=this.changeFullName.bind(this);
-        this.changePassword=this.changePassword.bind(this);
-        this.changeUsername=this.changeUsername.bind(this);
-        this.onSubmit=this.onSubmit.bind(this);
-
-        
-    }
-
-    changeFullName(event){
-        this.setState({
-            fullName:event.target.value
-        })
-    }
-
-    changeUsername(event){
-        this.setState({
-            username:event.target.value
-        })
-    }
-
-    changeEmail(event){
-        this.setState({
-            email:event.target.value
-        })
-    }
-
-    changePassword(event){
-        this.setState({
-            password:event.target.value
-        })
-    }
-    
-    onSubmit(event){
-        //stops the page from refreshing
-        event.preventDefault();
-        //gathers all the values that the user has entered when they click submit
-        const registered={
-            fullName: this.state.fullName,
-            username: this.state.username,
-            email:this.state.email,
-            password:this.state.password
-        }
-        console.log(registered);
-        //passing data to mongodb 
-       // axios.post('http://localhost:4000/app/signup', registered)
-    
+    const handleChange = ({ currentTarget: input }) => {
+		setData({ ...data, [input.name]: input.value });
        
-      
-       let axiosConfig = {
-        headers: {
-            'Content-Type': 'application/json',
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Credentials": true
-        }
-      };
-    axios.post('http://localhost:8080/app/signup', registered, axiosConfig)
-        .then(response=>console.log(response.data))
+	};
+
+    const handleSubmit = async (e) => {
+		e.preventDefault();
         
-       
-    }
+		try {
+			const url = "http://localhost:8080/api/users";
+          
+			const { data: res } = await axios.post(url, data);
+            navigate("/login");
+            console.log(res.message);
+			
+		} catch (error) {
+			if (
+				error.response &&
+				error.response.status >= 400 &&
+				error.response.status <= 500
+			) {
+				setError(error.response.data.message);
+			}
+		}
+	};
     
 
-    render(){
+   
         return(
             <div>
                 <div className='container'>
-                    
+                    <h1>Register</h1>
                     <div className = 'formDiv'>
-                        <form onSubmit={this.onSubmit}>
+                        <form onSubmit={handleSubmit}>
                         
                             <input type = 'text'
                             placeholder='Full Name'
-                            onChange = {this.changeFullName}
-                            value={this.state.fullName}
-                            className = 'form-control form-group'/>
+                            name="fullName"
+                            onChange = {handleChange}
+                            value={data.fullName}
+                            className = 'form-control form-group signupform'/>
                         
 
                             <input type = 'text'
                             placeholder='Username'
-                            onChange = {this.changeUsername}
-                            value={this.state.username}
-                            className = 'form-control form-group'/>
+                            name = 'username'
+                            onChange = {handleChange}
+                            value={data.username}
+                            className = 'form-control form-group signupform'/>
 
                             <input type = 'text'
                             placeholder='Email'
-                            onChange = {this.changeEmail}
-                            value={this.state.email}
-                            className = 'form-control form-group'/>
+                            name='email'
+                            onChange = {handleChange}
+                            value={data.email}
+                            className = 'form-control form-group signupform'/>
+                            <br/>
 
-                            <input type = 'text'
+                            <input type="password"
                             placeholder='Password'
-                            onChange = {this.changePassword}
-                            value={this.state.password}
-                            className = 'form-control form-group'/>
-
-                            <input type="submit" className = 'btn btn-danger btn-block' value ='Submit'/>
+                            name='password'
+                            onChange = {handleChange}
+                            value={data.password}
+                            className = 'form-control form-group signupform'/>
+                            <br/>
+                            {error}
+                            <input type="submit" className = 'btn btn-danger btn-block submitbutton' value ='Submit'/>
                         </form>
 
                         <div>Have an account already? <Link to="/Login">Login here</Link></div>
@@ -120,8 +90,7 @@ class App extends Component{
                 </div>
             </div>
         );
-    }
+    
 }
 
-export default App;
-//https://www.youtube.com/watch?v=SQqSMDIzhaE
+export default Signup;

@@ -1,16 +1,16 @@
 const router = require("express").Router();
-const { signedUpUser } = require("../models/SignUpModels");
+const { User } = require("../models/SignUpModels");
 const bcrypt = require("bcrypt");
 const Joi = require("joi");
 
 //this is to ckeck if the user is on our database when they are logging in 
-router.post("/signup", async (req, res) => {
+router.post("/", async (req, res) => {
 	try {
 		const { error } = validate(req.body);
 		if (error)
 			return res.status(400).send({ message: error.details[0].message });
 		//find the user
-		const user = await signedUpUser.findOne({ email: req.body.email });
+		const user = await User.findOne({ email: req.body.email });
 		if (!user)
 			return res.status(401).send({ message: "Invalid Email or Password" });
 		//comparing the password

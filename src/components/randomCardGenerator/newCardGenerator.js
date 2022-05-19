@@ -1,5 +1,6 @@
 import { CoPresent } from '@mui/icons-material';
 
+//import { useState } from 'react';
 const axios = require('axios').default;
 
 var ProteinPacks = 5;
@@ -8,7 +9,7 @@ var VegPacks = 5;
 var ModPacks = 5;
 var WildPacks = 5;
 
-async function RandomCardGenerator() {
+async function RandomCardGenerator(){
 
   try{
     const cards = await axios.get('http://localhost:8080/api');
@@ -72,24 +73,28 @@ async function RandomCardGenerator() {
                 var card_info = cards.data[randomType].CardObject[0];
                 console.log(card_info);
                 var cardname = card_info.Card_Name;
+               // setChicken((prevValue) => prevValue + 1);
                 document.getElementById("randomCard").value = cardname;
               } else if (randomIndex >= 10 && randomIndex <= 14) {
                 //Salmon
                 var card_info = cards.data[randomType].CardObject[1];
                 console.log(card_info);
                 var cardname = card_info.Card_Name;
+                //setSalmon((prevValue) => prevValue + 1);
                 document.getElementById("randomCard").value = cardname;
               } else if (randomIndex >= 15 && randomIndex <= 19) {
                 //Turkey
                 var card_info = cards.data[randomType].CardObject[2];
                 console.log(card_info);
                 var cardname = card_info.Card_Name;
+               // setTurkey((prevValue) => prevValue + 1);
                 document.getElementById("randomCard").value = cardname;
               } else if (randomIndex >= 20) {
                 //Steak
                 var card_info = cards.data[randomType].CardObject[3];
                 console.log(card_info);
                 var cardname = card_info.Card_Name;
+               // setSteak((prevValue) => prevValue + 1);
                 document.getElementById("randomCard").value = cardname;
               }
               //console.log("Setting randomCard id to fixedCard");

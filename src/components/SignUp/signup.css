@@ -1,0 +1,26 @@
+
+
+
+  .signupform {
+    width: 70%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    text-align: left;
+  }
+
+
+  .submitbutton {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 60%;
+    text-align: center;
+  }
+ 
+  

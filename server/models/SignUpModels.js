@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
+const jwt = require("jsonwebtoken");
 const joi = require("joi");
 const passwordComplexity = require("joi-password-complexity");
+
 //this is the schema (the information we want from our users)
 const signUpTemplate = new mongoose.Schema({
     fullName:{
@@ -21,22 +23,111 @@ const signUpTemplate = new mongoose.Schema({
         type:String,
         required:true
     },
+    Protein:{
+       
+        Chicken:{
+            type:Number,
+            
+        },
+        Salmon:{
+            type:Number,
+            
+        },
+        Turkey:{
+            type:Number,
+           
+        },
+        Steak:{
+            type:Number,
+           
+        }
+    },
+        WildCards:{
+       
+            Tripthechef:{
+                type:Number,
+                
+            },
+            pushyouropponentsfoodoffthetable:{
+                type:Number,
+                
+            },
+            Ramsaycomplementsyourfood:{
+                type:Number,
+               
+            },
+            Cookedtoperfection:{
+                type:Number,
+               
+            }
+        },
+            Vegetables:{
+       
+                Sprouts:{
+                    type:Number,
+                    
+                },
+               Peas:{
+                    type:Number,
+                    
+                },
+                Carrots:{
+                    type:Number,
+                   
+                },
+                Broccoli:{
+                    type:Number,
+                   
+                }
+            },
+               Carbs:{
+       
+                    Patatoes:{
+                        type:Number,
+                        
+                    },
+                    Chips:{
+                        type:Number,
+                        
+                    },
+                    Pasta:{
+                        type:Number,
+                       
+                    },
+                    Rice:{
+                        type:Number,
+                       
+                    }
+                },
+                    Modifiers:{
+       
+                        SaltAndPepper:{
+                            type:Number,
+                            
+                        },
+                        Ketchup:{
+                            type:Number,
+                            
+                        },
+                        Gravy:{
+                            type:Number,
+                           
+                        },
+                        Saffron:{
+                            type:Number,
+                           
+                        }
+   }
 
-    date:{
-        type:Date,
-        default:Date.now
-    }
 });
 
-//module.exports = mongoose.model('mytable', signUpTemplate);
+signUpTemplate.methods.generateAuthToken = function () {
+	const token = jwt.sign({ _id: this._id }, process.env.JWTPRIVATEKEY);
+	return token;
+};
 
-//authenticate user and allows them to move around the page without logging out
 
-/*signUpTemplate.methods.generateAuthToken = function(){
-    const token = jwt.sign({_id:this._id}, process.env.JWTPRIVATEKEY, {expiresIn:"7d"});
-    return token;
-}
-*/
+const User = mongoose.model("user", signUpTemplate);
 
 const validate = (data) =>{
     const schema = joi.object({
@@ -48,5 +139,4 @@ const validate = (data) =>{
     return schema.validate(data);
 }
 
-
-module.exports = mongoose.model("user", signUpTemplate);
+module.exports = { User, validate };

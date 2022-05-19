@@ -27,17 +27,18 @@ const PlayingCard = (props) => {
     <StyledCard key={props.id} onClick={props.removeItem}>
       <div className="cardDisplay">
         <img
+        className="cardImage"
           id="cardImage"
           src={require("../Images/icons/Card5.jpg")}
           alt="card"
         />
 
         <input
-          class="inputButton"
+          className="inputButton usercards"
           type="text"
           id="randomCard"
           name="randomCard"
-          readonly="readonly"
+          readOnly="readOnly"
         />
       </div>
     </StyledCard>

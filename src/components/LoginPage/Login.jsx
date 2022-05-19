@@ -1,13 +1,15 @@
 
 //import "bootstrap/dist/css/bootstrap.min.css"
-import axios from 'axios';
+import axios from "axios";
 import { Link } from "react-router-dom";
-import React, { useState } from "react";
+import { useState } from "react";
+import "./login.css";
 
 
 
-const Login = () => {
+const Login = (props) => {
 	const [data, setData] = useState({ email: "", password: "" });
+	
 	const [error, setError] = useState("");
 
 	const handleChange = ({ currentTarget: input }) => {
@@ -17,10 +19,14 @@ const Login = () => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
-			const url = "http://localhost:8080/app/signup";
+			const url = `http://localhost:8080/api/auth`;
 			const { data: res } = await axios.post(url, data);
+			
 			localStorage.setItem("token", res.data);
-			window.location = "/";
+		
+			
+			window.location = `/${data.email}`;
+			
 		} catch (error) {
 			if (
 				error.response &&
@@ -32,25 +38,27 @@ const Login = () => {
 		}
 	};
 
-
+	
 
 
 	return (
 		<div >
-			<div >
-				<div >
+			<div className="container">
+				<div className="center" >
 					<form onSubmit={handleSubmit}>
 						<h1>Login to Your Account</h1>
 						<input
 							type="email"
 							placeholder="Email"
 							name="email"
+							className="loginstyle"
 							onChange={handleChange}
 							value={data.email}
 							required
 
 						/>
 						<input
+						className="loginstyle"
 							type="password"
 							placeholder="Password"
 							name="password"
@@ -60,7 +68,8 @@ const Login = () => {
 
 						/>
 						{error && <div>{error}</div>}
-						<button type="submit" >
+						<button 
+						onClick ={handleSubmit} >
 							Sign In
 						</button>
 					</form>
@@ -72,9 +81,13 @@ const Login = () => {
 							Sign Up
 						</button>
 					</Link>
+					
 				</div>
+			
 			</div>
+			
 		</div>
+		
 	);
 }
 

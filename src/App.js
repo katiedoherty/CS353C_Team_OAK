@@ -9,10 +9,10 @@ function App() {
 
   return (
     <Routes>
-      {user && <Route path="/" exact element={<CardAnimation />} />}
+      {user && <Route path="/:id" exact element={<CardAnimation />} />}
       <Route path="/signup" exact element={<Signup />} />
       <Route path="/login" exact element={<Login />} />
-      <Route path="/" element={<Navigate replace to="/login" />} />
+      <Route path="/:id" element={<Navigate replace to="/login" />} />
     </Routes>
   );
 }

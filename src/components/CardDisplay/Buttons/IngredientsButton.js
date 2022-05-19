@@ -40,7 +40,7 @@ const StyledButton = styled.button`
 `;
 
 const IngredientsButton = (props) => {
-  return <StyledButton>{props.label}</StyledButton>;
+  return <StyledButton onClick={props.userCards}>{props.label}</StyledButton>;
 };
 
 export default IngredientsButton;
