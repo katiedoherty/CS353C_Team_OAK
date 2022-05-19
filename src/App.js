@@ -4,6 +4,17 @@ import Signup from "./components/SignUp/SignUp";
 import Login from "./components/LoginPage/Login";
 import "./App.css";
 
+setInterval(function(){
+  //function to check if the user has reached the unpack limit of six cards
+  var cards = document.getElementsByClassName("cardImage");
+  if(cards.length >= 6){
+    const unpackButton = document.getElementById("unpack_button").disabled = true;
+  }
+  else{
+    const unpackButton = document.getElementById("unpack_button").disabled = false;
+  }
+}, 200);
+
 function App() {
   const user = localStorage.getItem("token");
 
