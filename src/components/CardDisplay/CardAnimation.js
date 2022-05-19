@@ -6,7 +6,7 @@ import LogOutButton from "./Buttons/LogOutButton";
 import IngredientsButton from "./Buttons/IngredientsButton";
 import "./CardAnimation.css";
 import axios from "axios";
-import RandomCardGenerator from "../RandomCardGenerator/newCardGenerator";
+import RandomCardGenerator from "../randomCardGenerator/newCardGenerator";
 import { useParams } from "react-router-dom";
 import { useEffect } from "react";
 import Modalfunction from './Buttons/UserCardsButton'

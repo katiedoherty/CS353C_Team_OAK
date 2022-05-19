@@ -29,26 +29,42 @@ async function RandomCardGenerator() {
           var card_info = cards.data[randomType].CardObject[0];
           console.log(card_info);
           var cardname = card_info.Card_Name;
+          var cardgeneration = card_info.Generation;
+          var cardnamedepletion = card_info.Depletion;
           document.getElementById("randomCard").value = cardname;
+          document.getElementById("Cardgeneration").value = cardgeneration;
+          document.getElementById("CardDepletion").value = cardnamedepletion;
           //APPEND THE CORRECT CARD TO THE VARIABLE cardname
         } else if (randomIndex >= 10 && randomIndex <= 14) {
           //Food on the Floor
           var card_info = cards.data[randomType].CardObject[1];
           console.log(card_info);
           var cardname = card_info.Card_Name;
+          var cardgeneration = card_info.Generation;
+          var cardnamedepletion = card_info.Depletion;
           document.getElementById("randomCard").value = cardname;
+          document.getElementById("Cardgeneration").value = cardgeneration;
+          document.getElementById("CardDepletion").value = cardnamedepletion;
         } else if (randomIndex >= 15 && randomIndex <= 19) {
           //Ramsay complements
           var card_info = cards.data[randomType].CardObject[2];
           console.log(card_info);
           var cardname = card_info.Card_Name;
+          var cardgeneration = card_info.Generation;
+          var cardnamedepletion = card_info.Depletion;
           document.getElementById("randomCard").value = cardname;
+          document.getElementById("Cardgeneration").value = cardgeneration;
+          document.getElementById("CardDepletiond").value = cardnamedepletion;
         } else if (randomIndex >= 20) {
           //Cooked to perfection
           var card_info = cards.data[randomType].CardObject[3];
           console.log(card_info);
           var cardname = card_info.Card_Name;
+          var cardgeneration = card_info.Generation;
+          var cardnamedepletion = card_info.Depletion;
           document.getElementById("randomCard").value = cardname;
+          document.getElementById("Cardgeneration").value = cardgeneration;
+          document.getElementById("CardDepletion").value = cardnamedepletion;
         }
         //console.log("Setting randomCard id to fixedCard");
         var elem = document.getElementById("randomCard");
@@ -78,29 +94,49 @@ async function RandomCardGenerator() {
           var card_info = cards.data[randomType].CardObject[0];
           console.log(card_info);
           var cardname = card_info.Card_Name;
+          var cardgeneration = card_info.Generation;
+          var cardnamedepletion = card_info.Depletion;
           document.getElementById("randomCard").value = cardname;
+          document.getElementById("Cardgeneration").value = cardgeneration;
+          document.getElementById("CardDepletion").value = cardnamedepletion;
         } else if (randomIndex >= 10 && randomIndex <= 14) {
           //Salmon
           var card_info = cards.data[randomType].CardObject[1];
           console.log(card_info);
           var cardname = card_info.Card_Name;
+          var cardgeneration = card_info.Generation;
+          var cardnamedepletion = card_info.Depletion;
           document.getElementById("randomCard").value = cardname;
+          document.getElementById("Cardgeneration").value = cardgeneration;
+          document.getElementById("CardDepletion").value = cardnamedepletion;
         } else if (randomIndex >= 15 && randomIndex <= 19) {
           //Turkey
           var card_info = cards.data[randomType].CardObject[2];
           console.log(card_info);
           var cardname = card_info.Card_Name;
+          var cardgeneration = card_info.Generation;
+          var cardnamedepletion = card_info.Depletion;
           document.getElementById("randomCard").value = cardname;
+          document.getElementById("Cardgeneration").value = cardgeneration;
+          document.getElementById("CardDepletion").value = cardnamedepletion;
         } else if (randomIndex >= 20) {
           //Steak
           var card_info = cards.data[randomType].CardObject[3];
           console.log(card_info);
           var cardname = card_info.Card_Name;
+          var cardgeneration = card_info.Generation;
+          var cardnamedepletion = card_info.Depletion;
           document.getElementById("randomCard").value = cardname;
+          document.getElementById("Cardgeneration").value = cardgeneration;
+          document.getElementById("CardDepletion").value = cardnamedepletion;
         }
         //console.log("Setting randomCard id to fixedCard");
         var elem = document.getElementById("randomCard");
         elem.id = "fixedCard";
+        var elem1 = document.getElementById("Cardgeneration");
+        elem1.id = "fixedCard";
+        var elem2 = document.getElementById("CardDepletion");
+        elem2.id = "fixedCard";
         var cardImage = document.getElementById("cardImage");
         //SET THE CORRECT IMAGE TO THE CARD
         if (randomIndex <= 9) {
@@ -126,29 +162,49 @@ async function RandomCardGenerator() {
           var card_info = cards.data[randomType].CardObject[0];
           console.log(card_info);
           var cardname = card_info.Card_Name;
+          var cardgeneration = card_info.Generation;
+          var cardnamedepletion = card_info.Depletion;
           document.getElementById("randomCard").value = cardname;
+          document.getElementById("Cardgeneration").value = cardgeneration;
+          document.getElementById("CardDepletion").value = cardnamedepletion;
         } else if (randomIndex >= 10 && randomIndex <= 14) {
           //Peas
           var card_info = cards.data[randomType].CardObject[1];
           console.log(card_info);
           var cardname = card_info.Card_Name;
+          var cardgeneration = card_info.Generation;
+          var cardnamedepletion = card_info.Depletion;
           document.getElementById("randomCard").value = cardname;
+          document.getElementById("Cardgeneration").value = cardgeneration;
+          document.getElementById("CardDepletion").value = cardnamedepletion;
         } else if (randomIndex >= 15 && randomIndex <= 19) {
           //Carrots
           var card_info = cards.data[randomType].CardObject[2];
           console.log(card_info);
           var cardname = card_info.Card_Name;
+          var cardgeneration = card_info.Generation;
+          var cardnamedepletion = card_info.Depletion;
           document.getElementById("randomCard").value = cardname;
+          document.getElementById("Cardgeneration").value = cardgeneration;
+          document.getElementById("CardDepletion").value = cardnamedepletion;
         } else if (randomIndex >= 20) {
           //Broccoli
           var card_info = cards.data[randomType].CardObject[3];
           console.log(card_info);
           var cardname = card_info.Card_Name;
+          var cardgeneration = card_info.Generation;
+          var cardnamedepletion = card_info.Depletion;
           document.getElementById("randomCard").value = cardname;
+          document.getElementById("Cardgeneration").value = cardgeneration;
+          document.getElementById("CardDepletion").value = cardnamedepletion;
         }
         //console.log("Setting randomCard id to fixedCard");
         var elem = document.getElementById("randomCard");
         elem.id = "fixedCard";
+        var elem1 = document.getElementById("Cardgeneration");
+        elem1.id = "fixedCard";
+        var elem2 = document.getElementById("CardDepletion");
+        elem2.id = "fixedCard";
         var cardImage = document.getElementById("cardImage");
         //SET THE CORRECT IMAGE TO THE CARD
         if (randomIndex <= 9) {
@@ -174,29 +230,49 @@ async function RandomCardGenerator() {
           var card_info = cards.data[randomType].CardObject[0];
           console.log(card_info);
           var cardname = card_info.Card_Name;
+          var cardgeneration = card_info.Generation;
+          var cardnamedepletion = card_info.Depletion;
           document.getElementById("randomCard").value = cardname;
+          document.getElementById("Cardgeneration").value = cardgeneration;
+          document.getElementById("CardDepletion").value = cardnamedepletion;
         } else if (randomIndex >= 10 && randomIndex <= 14) {
           //Chips
           var card_info = cards.data[randomType].CardObject[1];
           console.log(card_info);
           var cardname = card_info.Card_Name;
+          var cardgeneration = card_info.Generation;
+          var cardnamedepletion = card_info.Depletion;
           document.getElementById("randomCard").value = cardname;
+          document.getElementById("Cardgeneration").value = cardgeneration;
+          document.getElementById("CardDepletion").value = cardnamedepletion;
         } else if (randomIndex >= 15 && randomIndex <= 19) {
           //Pasta
           var card_info = cards.data[randomType].CardObject[2];
           console.log(card_info);
           var cardname = card_info.Card_Name;
+          var cardgeneration = card_info.Generation;
+          var cardnamedepletion = card_info.Depletion;
           document.getElementById("randomCard").value = cardname;
+          document.getElementById("Cardgeneration").value = cardgeneration;
+          document.getElementById("CardDepletion").value = cardnamedepletion;
         } else if (randomIndex >= 20) {
           //Rice
           var card_info = cards.data[randomType].CardObject[3];
           console.log(card_info);
           var cardname = card_info.Card_Name;
+          var cardgeneration = card_info.Generation;
+          var cardnamedepletion = card_info.Depletion;
           document.getElementById("randomCard").value = cardname;
+          document.getElementById("Cardgeneration").value = cardgeneration;
+          document.getElementById("CardDepletion").value = cardnamedepletion;
         }
         //console.log("Setting randomCard id to fixedCard");
         var elem = document.getElementById("randomCard");
         elem.id = "fixedCard";
+        var elem1 = document.getElementById("Cardgeneration");
+        elem1.id = "fixedCard";
+        var elem2 = document.getElementById("CardDepletion");
+        elem2.id = "fixedCard";
         var cardImage = document.getElementById("cardImage");
         //SET THE CORRECT IMAGE TO THE CARD
         if (randomIndex <= 9) {
@@ -222,29 +298,49 @@ async function RandomCardGenerator() {
           var card_info = cards.data[randomType].CardObject[0];
           console.log(card_info);
           var cardname = card_info.Card_Name;
+          var cardgeneration = card_info.Generation;
+          var cardnamedepletion = card_info.Depletion;
           document.getElementById("randomCard").value = cardname;
+          document.getElementById("Cardgeneration").value = cardgeneration;
+          document.getElementById("CardDepletion").value = cardnamedepletion;
         } else if (randomIndex >= 10 && randomIndex <= 14) {
           //Ketchup
           var card_info = cards.data[randomType].CardObject[1];
           console.log(card_info);
           var cardname = card_info.Card_Name;
+          var cardgeneration = card_info.Generation;
+          var cardnamedepletion = card_info.Depletion;
           document.getElementById("randomCard").value = cardname;
+          document.getElementById("Cardgeneration").value = cardgeneration;
+          document.getElementById("CardDepletion").value = cardnamedepletion;
         } else if (randomIndex >= 15 && randomIndex <= 19) {
           //Gravy
           var card_info = cards.data[randomType].CardObject[2];
           console.log(card_info);
           var cardname = card_info.Card_Name;
+          var cardgeneration = card_info.Generation;
+          var cardnamedepletion = card_info.Depletion;
           document.getElementById("randomCard").value = cardname;
+          document.getElementById("Cardgeneration").value = cardgeneration;
+          document.getElementById("CardDepletion").value = cardnamedepletion;
         } else if (randomIndex >= 20) {
           //Saffron
           var card_info = cards.data[randomType].CardObject[3];
           console.log(card_info);
           var cardname = card_info.Card_Name;
+          var cardgeneration = card_info.Generation;
+          var cardnamedepletion = card_info.Depletion;
           document.getElementById("randomCard").value = cardname;
+          document.getElementById("Cardgeneration").value = cardgeneration;
+          document.getElementById("CardDepletion").value = cardnamedepletion;
         }
         //console.log("Setting randomCard id to fixedCard");
         var elem = document.getElementById("randomCard");
         elem.id = "fixedCard";
+        var elem1 = document.getElementById("Cardgeneration");
+        elem1.id = "fixedCard";
+        var elem2 = document.getElementById("CardDepletion");
+        elem2.id = "fixedCard";
         var cardImage = document.getElementById("cardImage");
         //SET THE CORRECT IMAGE TO THE CARD
         if (randomIndex <= 9) {
