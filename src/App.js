@@ -6,7 +6,7 @@ import "./App.css";
 
 function App() {
   const user = localStorage.getItem("token");
-
+  
   return (
     <Routes>
       {user && <Route path="/:id" exact element={<CardAnimation />} />}

@@ -20,6 +20,18 @@ const StyledCard = styled.div`
     padding: 8px;
     );
   }
+  
+  .gener_deple{
+    display: none;
+    transition: .2s;
+    transform: translateY(1em);
+  }
+
+  .inputButton_usercards:hover +  .gener_deple{
+    display: block;
+    transform: translateY(0);
+  }
+
 `;
 
 const PlayingCard = (props) => {
@@ -34,12 +46,30 @@ const PlayingCard = (props) => {
         />
 
         <input
-          className="inputButton usercards"
+          className="inputButton_usercards"
           type="text"
           id="randomCard"
           name="randomCard"
           readOnly="readOnly"
         />
+        
+        <div className="gener_deple">
+        <input
+          className="input_generation"
+          type="text"
+          id="Cardgeneration"
+          name="Cardgeneration"
+          readOnly="readOnly"
+        />
+
+        <input
+          className="input_depletion"
+          type="text"
+          id="CardDepletion"
+          name="CardDepletion"
+          readOnly="readOnly"
+        />
+      </div>
       </div>
     </StyledCard>
   );
