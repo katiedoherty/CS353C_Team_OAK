@@ -6,6 +6,9 @@ import "./App.css";
 
 setInterval(function(){
   //function to check if the user has reached the unpack limit of six cards
+  if(document.getElementById("unpack_button").disabled){
+    return;
+  }
   var cards = document.getElementsByClassName("cardImage");
   if(cards.length >= 6){
     const unpackButton = document.getElementById("unpack_button").disabled = true;

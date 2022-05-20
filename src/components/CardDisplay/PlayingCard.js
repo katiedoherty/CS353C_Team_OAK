@@ -32,7 +32,6 @@ const PlayingCard = (props) => {
           src={require("../Images/icons/Card5.jpg")}
           alt="card"
         />
-
         <input
           className="inputButton usercards"
           type="text"
