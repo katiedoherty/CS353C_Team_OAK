@@ -40,7 +40,11 @@ const StyledButton = styled.button`
 `;
 
 const UnpackButton = (props) => {
-  return <StyledButton id="unpack_button" onClick={props.addItem}>{props.label}</StyledButton>;
+  return (
+    <StyledButton id="unpack_button" onClick={props.addItem}>
+      {props.label}
+    </StyledButton>
+  );
 };
 
 export default UnpackButton;

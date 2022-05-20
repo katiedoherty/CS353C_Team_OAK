@@ -4,20 +4,30 @@ import Signup from "./components/SignUp/SignUp";
 import Login from "./components/LoginPage/Login";
 import "./App.css";
 
-setInterval(function(){
+setInterval(function () {
   //function to check if the user has reached the unpack limit of six cards
   var cards = document.getElementsByClassName("cardImage");
-  if(cards.length >= 6){
-    const unpackButton = document.getElementById("unpack_button").disabled = true;
+  if (cards.length >= 6) {
+    const unpackButton = (document.getElementById(
+      "unpack_button"
+    ).disabled = true);
+    unpackButton = document
+      .getElementById("unpack_button")
+      .setAttribute("style", "background-color: #FF7F7F;");
+  } else {
+    const unpackButton = (document.getElementById(
+      "unpack_button"
+    ).disabled = false);
+    //RESET THE COLOR OF THE UNPACK BUTTON
+    unpackButton = document
+      .getElementById("unpack_button")
+      .setAttribute("style", "background-color: #2b9fe0;");
   }
-  else{
-    const unpackButton = document.getElementById("unpack_button").disabled = false;
-  }
-}, 200);
+}, 1000);
 
 function App() {
   const user = localStorage.getItem("token");
-  
+
   return (
     <Routes>
       {user && <Route path="/:id" exact element={<CardAnimation />} />}
