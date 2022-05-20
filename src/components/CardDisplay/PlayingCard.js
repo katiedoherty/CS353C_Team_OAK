@@ -44,7 +44,7 @@ const StyledCard = styled.div`
     border: 2px solid #111;
     background-color: white;
     font-family: "Bodoni Moda", serif;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     padding: 1px;
     color: black;

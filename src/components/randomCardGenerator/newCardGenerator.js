@@ -54,7 +54,7 @@ async function RandomCardGenerator() {
           var cardnamedepletion = card_info.Depletion;
           document.getElementById("randomCard").value = cardname;
           document.getElementById("CardGeneration").value = cardgeneration;
-          document.getElementById("CardDepletiond").value = cardnamedepletion;
+          document.getElementById("CardDepletion").value = cardnamedepletion;
         } else if (randomIndex >= 20) {
           //Cooked to perfection
           var card_info = cards.data[randomType].CardObject[3];

@@ -23,7 +23,7 @@ setInterval(function () {
       .getElementById("unpack_button")
       .setAttribute("style", "background-color: #2b9fe0;");
   }
-}, 1000);
+}, 500);
 
 function App() {
   const user = localStorage.getItem("token");
