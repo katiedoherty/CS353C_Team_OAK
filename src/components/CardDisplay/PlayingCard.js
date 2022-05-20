@@ -74,8 +74,8 @@ const PlayingCard = (props) => {
           <input
             className="inputButton_usercards"
             type="text"
-            id="Cardgeneration"
-            name="Cardgeneration"
+            id="CardGeneration"
+            name="CardGeneration"
             readOnly="readOnly"
           />
 
