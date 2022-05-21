@@ -65,7 +65,7 @@ const PlayingCard = (props) => {
         />
         <div className="gener_deple">
           <input
-            className="inputButton_usercards"
+            className="inputButton_usercards usercards"
             type="text"
             id="randomCard"
             name="randomCard"

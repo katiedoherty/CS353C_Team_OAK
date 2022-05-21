@@ -88,18 +88,13 @@ const CardAnimation = () => {
   const [gravy, setGravy] = useState(0);
   const [saffron, setSaffron] = useState(0);
   const [openModal, setOpenModal] = useState(false);
-  const [items, setItems] = useState([
-    {
-      id: 0,
-      title: "TEST",
-      subtitle: "TEST",
-      power: "0",
-    },
-  ]);
-
-  useEffect(() => {
-    setItems([]);
-  }, []);
+  const [items, setItems] = useState([]);
+  
+ 
+  window.onbeforeunload = function() {
+    return "Data will be lost if you leave the page, are you sure?";
+  };
+  
   const addItem = () => {
     const timestamp = Date.now();
     setItems([
@@ -118,63 +113,7 @@ const CardAnimation = () => {
     }
   };
 
-  const userCards = async () => {
-    var updatecards = [];
-    var elts = document.getElementsByClassName("usercards");
-    for (var i = 0; i < elts.length; ++i) {
-      updatecards.push(elts[i].value);
 
-      if (updatecards[i] == "Chicken") {
-        setChicken((prevValue) => prevValue + 1);
-      } else if (updatecards[i] == "Salmon") {
-        setSalmon((prevValue) => prevValue + 1);
-      } else if (updatecards[i] == "Turkey") {
-        setTurkey((prevValue) => prevValue + 1);
-      } else if (updatecards[i] == "Steak") {
-        setSteak((prevValue) => prevValue + 1);
-      } else if (updatecards[i] == "Trip the chef") {
-        settripchef((prevValue) => prevValue + 1);
-      } else if (updatecards[i] == "Food on the Floor!") {
-        setpushfood((prevValue) => prevValue + 1);
-      } else if (updatecards[i] == "Ramsay Complements!") {
-        setcomplementsfood((prevValue) => prevValue + 1);
-      } else if (updatecards[i] == "Cooked to Perfection!") {
-        setcookedtoperfection((prevValue) => prevValue + 1);
-      } else if (updatecards[i] == "Sprouts") {
-        setSprouts((prevValue) => prevValue + 1);
-      } else if (updatecards[i] == "Peas") {
-        setPeas((prevValue) => prevValue + 1);
-      } else if (updatecards[i] == "Carrots") {
-        setCarrots((prevValue) => prevValue + 1);
-      } else if (updatecards[i] == "Broccoli") {
-        setBroccoli((prevValue) => prevValue + 1);
-      } else if (updatecards[i] == "Potatoes") {
-        setPotatoes((prevValue) => prevValue + 1);
-      } else if (updatecards[i] == "Chips") {
-        setChips((prevValue) => prevValue + 1);
-      } else if (updatecards[i] == "Pasta") {
-        setPasta((prevValue) => prevValue + 1);
-      } else if (updatecards[i] == "Rice") {
-        setRice((prevValue) => prevValue + 1);
-      } else if (updatecards[i] == "Salt & Pepper") {
-        setSaltandpepper((prevValue) => prevValue + 1);
-      } else if (updatecards[i] == "Ketchup") {
-        setKetchup((prevValue) => prevValue + 1);
-      } else if (updatecards[i] == "Gravy") {
-        setGravy((prevValue) => prevValue + 1);
-      } else if (updatecards[i] == "Saffron") {
-        setSaffron((prevValue) => prevValue + 1);
-      }
-    }
-
-    var cards = document.querySelectorAll(`.cardDisplay`);
-
-    for (var i = 0; i < items.length; i++) {
-      setItems([]);
-    }
-
-    updatecards = [];
-  };
 
   const update = async () => {
     const res = await axios.put(`http://localhost:8080/api/usercards`, {
@@ -232,6 +171,10 @@ const CardAnimation = () => {
     setKetchup(0);
     setGravy(0);
     setSaffron(0);
+    setPeas(0);
+    setCarrots(0);
+    setSprouts(0);
+    setBroccoli(0);
   }, [
     chicken,
     steak,
@@ -245,6 +188,14 @@ const CardAnimation = () => {
     saltandpepper,
     gravy,
     saffron,
+    sprouts,
+    carrots,
+    broccoli,
+    peas,
+    chips,
+    pasta,
+    rice,
+    patatoes
   ]);
 
   const removeItem = (id) => {
@@ -274,7 +225,28 @@ const CardAnimation = () => {
       </div>
       <div className="buttonContainer">
         <IngredientsButton
-          userCards={userCards}
+        items = {setItems}
+          chicken={setChicken}
+          steak={setSteak}
+          salmon={setSalmon}
+          turkey={setTurkey}
+          tripchef={settripchef}
+          pushfood={setpushfood}
+          complementsfood={setcomplementsfood}
+          cookedtoperfection={setcookedtoperfection}
+          ketchup={setKetchup}
+          saltandpepper={setSaltandpepper}
+          gravy={setGravy}
+          saffron={setSaffron}
+          sprouts={setSprouts}
+          carrots={setCarrots}
+          broccoli={setBroccoli}
+          peas={setPeas}
+          chips={setChips}
+          pasta={setPasta}
+          rice={setRice}
+          patatoes={setPotatoes}
+          
           label={"Add To Deck"}
         ></IngredientsButton>
         <UnpackButton label={"Unpack Cards"} addItem={addItem}></UnpackButton>

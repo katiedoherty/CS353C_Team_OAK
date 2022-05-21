@@ -15,7 +15,7 @@ setInterval(function () {
       .getElementById("unpack_button")
       .setAttribute("style", "background-color: #FF7F7F;");
   } else {
-    const unpackButton = (document.getElementById(
+    let unpackButton = (document.getElementById(
       "unpack_button"
     ).disabled = false);
     //RESET THE COLOR OF THE UNPACK BUTTON
@@ -32,8 +32,8 @@ function App() {
     <Routes>
       {user && <Route path="/:id" exact element={<CardAnimation />} />}
       <Route path="/signup" exact element={<Signup />} />
-      <Route path="/login" exact element={<Login />} />
-      <Route path="/:id" element={<Navigate replace to="/login" />} />
+      <Route path="/" exact element={<Login />} />
+      <Route path="/:id" element={<Navigate replace to="/" />} />
     </Routes>
   );
 }

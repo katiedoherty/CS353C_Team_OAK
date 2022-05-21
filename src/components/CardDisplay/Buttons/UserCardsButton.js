@@ -133,22 +133,24 @@ function Modalfunction({ close }) {
               <th>Number of Modifier Cards</th>
             </tr>
             <tbody>
-              <tr>
-                <td>Gravy</td>
-                <td>{personscards?.Modifiers?.Gravy}</td>
+            <tr>
+                <td>Salt and Pepper</td>
+                <td>{personscards?.Modifiers?.SaltAndPepper}</td>
               </tr>
               <tr>
                 <td>Ketchup</td>
                 <td>{personscards?.Modifiers?.Ketchup}</td>
               </tr>
               <tr>
+                <td>Gravy</td>
+                <td>{personscards?.Modifiers?.Gravy}</td>
+              </tr>
+              
+              <tr>
                 <td>Saffron</td>
                 <td>{personscards?.Modifiers?.Saffron}</td>
               </tr>
-              <tr>
-                <td>Salt and Pepper</td>
-                <td>{personscards?.Modifiers?.SaltAndPepper}</td>
-              </tr>
+              
             </tbody>
           </table>
         </div>
@@ -160,15 +162,7 @@ function Modalfunction({ close }) {
               <th>Number of Wildcards</th>
             </tr>
             <tbody>
-              <tr>
-                <td>Cooked To Perfection!</td>
-                <td>{personscards?.WildCards?.Cookedtoperfection}</td>
-              </tr>
-              <tr>
-                <td>Ramsay Complements!</td>
-                <td>{personscards?.WildCards?.Ramsaycomplementsyourfood}</td>
-              </tr>
-              <tr>
+            <tr>
                 <td>Trip The Chef!</td>
                 <td>{personscards?.WildCards?.Ramsaycomplementsyourfood}</td>
               </tr>
@@ -178,6 +172,17 @@ function Modalfunction({ close }) {
                   {personscards?.WildCards?.pushyouropponentsfoodoffthetable}
                 </td>
               </tr>
+              <tr>
+                <td>Ramsay Complements!</td>
+                <td>{personscards?.WildCards?.Ramsaycomplementsyourfood}</td>
+              </tr>
+              <tr>
+                <td>Perfectly Cooked!</td>
+                <td>{personscards?.WildCards?.Cookedtoperfection}</td>
+              </tr>
+             
+             
+              
             </tbody>
           </table>
         </div>
