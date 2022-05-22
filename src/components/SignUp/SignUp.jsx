@@ -84,7 +84,7 @@ const Signup = () => {
                             <input type="submit" className = 'btn btn-danger btn-block submitbutton' value ='Submit'/>
                         </form>
 
-                        <div>Have an account already? <Link to="/Login">Login here</Link></div>
+                        <div>Have an account already? <Link to="/">Login here</Link></div>
                         
                     </div>
                 </div>
