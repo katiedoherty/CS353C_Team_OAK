@@ -121,6 +121,7 @@ const signUpTemplate = new mongoose.Schema({
 
 });
 
+//generates jwt token
 signUpTemplate.methods.generateAuthToken = function () {
 	const token = jwt.sign({ _id: this._id }, process.env.JWTPRIVATEKEY);
 	return token;
@@ -129,6 +130,7 @@ signUpTemplate.methods.generateAuthToken = function () {
 
 const User = mongoose.model("user", signUpTemplate);
 
+//validates the data 
 const validate = (data) =>{
     const schema = joi.object({
         fullName:joi.string().required().label("Full Name"),

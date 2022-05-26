@@ -22,9 +22,10 @@ const Login = (props) => {
 			const url = `http://localhost:8080/api/auth`;
 			const { data: res } = await axios.post(url, data);
 			
+			//sets jwt token
 			localStorage.setItem("token", res.data);
 		
-			
+			//sends the user to their account email is the unique identifier.
 			window.location = `/${data.email}`;
 			
 		} catch (error) {

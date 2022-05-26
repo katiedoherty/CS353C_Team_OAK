@@ -95,6 +95,7 @@ const CardAnimation = () => {
     return "Data will be lost if you leave the page, are you sure?";
   };
   
+  //adds card template to screen
   const addItem = () => {
     const timestamp = Date.now();
     setItems([
@@ -114,7 +115,7 @@ const CardAnimation = () => {
   };
 
 
-
+//sends current states to the card field on the users document in the database and increments then by the number that is in the state
   const update = async () => {
     const res = await axios.put(`http://localhost:8080/api/usercards`, {
       email: useremail,
@@ -153,6 +154,7 @@ const CardAnimation = () => {
     console.log(res.data);
   };
 
+  //after any of the mentioned states in the array are changed then run the update function and change all states to 0.
   useEffect(() => {
     update();
     setChicken(0);
@@ -198,6 +200,7 @@ const CardAnimation = () => {
     patatoes
   ]);
 
+  //removes card from screen
   const removeItem = (id) => {
     console.log("The id of this item:" + id);
     const newItems = [...items].filter((item) => {

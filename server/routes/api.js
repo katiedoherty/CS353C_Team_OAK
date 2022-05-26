@@ -1,3 +1,5 @@
+//route for gathering the card information
+
 const express = require('express');
 
 const router = express.Router();

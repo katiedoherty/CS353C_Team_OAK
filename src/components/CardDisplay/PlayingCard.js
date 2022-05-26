@@ -52,7 +52,7 @@ const StyledCard = styled.div`
     line-height: 0.5rem;
   }
 `;
-
+//template for the card on the screen
 const PlayingCard = (props) => {
   return (
     <StyledCard key={props.id} onClick={props.removeItem}>

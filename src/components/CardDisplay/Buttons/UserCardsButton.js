@@ -1,3 +1,5 @@
+//collects the information of the saved user cards from the database and displays them on a modal on the frontend.
+
 import React from "react";
 import styled from "styled-components";
 import "../CardAnimation.css";
@@ -48,10 +50,12 @@ function Modalfunction({ close }) {
         <h1>Your Cards</h1>
         <div className="column">
           <table>
+            <thead>
             <tr>
               <th>Protein Card Names</th>
               <th>Number Of Protein Cards</th>
             </tr>
+            </thead>
             <tbody>
               <tr>
                 <td>Chicken</td>
@@ -75,10 +79,12 @@ function Modalfunction({ close }) {
 
         <div className="column">
           <table>
+            <thead>
             <tr>
               <th>Carbohydrate Card Names</th>
               <th>Number Of Carbohydrate Cards</th>
             </tr>
+            </thead>
             <tbody>
               <tr>
                 <td>Potatoes</td>
@@ -102,10 +108,12 @@ function Modalfunction({ close }) {
 
         <div className="column">
           <table>
+            <thead>
             <tr>
               <th>Vegetable Card Names</th>
               <th>Number of Vegetable Cards</th>
             </tr>
+            </thead>
             <tbody>
               <tr>
                 <td>Sprouts</td>
@@ -128,10 +136,12 @@ function Modalfunction({ close }) {
         </div>
         <div className="column">
           <table>
+            <thead>
             <tr>
               <th>Modifier Card Names</th>
               <th>Number of Modifier Cards</th>
             </tr>
+            </thead>
             <tbody>
             <tr>
                 <td>Salt and Pepper</td>
@@ -157,10 +167,12 @@ function Modalfunction({ close }) {
 
         <div>
           <table>
+            <thead>
             <tr>
               <th>Wildcard names</th>
               <th>Number of Wildcards</th>
             </tr>
+            </thead>
             <tbody>
             <tr>
                 <td>Trip The Chef!</td>

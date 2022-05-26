@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+//button saving the cards on screen to the database and making the cards on the screen dissapear.
 
 const StyledButton = styled.button`
   @import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda&display=swap");

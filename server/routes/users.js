@@ -1,4 +1,4 @@
-
+//route for registering a new user.
 const router = require("express").Router();
 const { User, validate } = require("../models/SignUpModels");
 const bcrypt = require("bcrypt");

@@ -1,4 +1,4 @@
-
+//route for saving and getting the logged in users card.
 const express = require('express');
 
 const router = express.Router();
@@ -6,6 +6,7 @@ const { User } = require("../models/SignUpModels");
 
 
 router.put('/', async (req, res)=>{
+    //gathers all the cards on screen
     let upemail = req.body.email;
     let upChicken = req.body.Protein.Chicken
     let upSalmon = req.body.Protein.Salmon
